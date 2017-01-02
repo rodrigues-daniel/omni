@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<h:html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAV5v_BKb3vie085zaF3Ehl2zDAiZDd8s0"
+		type="text/javascript" />
+	<title>Mapa</title>
+</h:head>
+<h:body>
+	<h:form id="formmapa">
+
+		<p:gmap id="mapa" center="-5.827391, -35.260487" zoom="11" type="MAP"
+			style="width:800px;height:600px" 
+			widgetVar="mapsat" draggable="true" />
+
+	</h:form>
+
+
+	<p:socket onMessage="handleMessage" channel="/atualizar" />
+
+	<script type="text/javascript">
+function handleMessage() {
+	gmap = PF('mapsat').getMap();
+
+
+
+	 currentMarker = new google.maps.Marker({
+	                position:new google.maps.LatLng(-5.335163,-35.309202)
+	            });
+	 
+ PF('mapsat').addOverlay(currentMarker);
+
+
+	
+}
+</script>
+</h:body>
+</h:html>
