@@ -14,7 +14,6 @@ import javax.persistence.Id;
 
 public final class ViewUtils {
 
-	
 	public static <T> List<T> asList(Collection<T> collection) {
 
 		if (collection == null) {
