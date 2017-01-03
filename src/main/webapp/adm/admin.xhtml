@@ -5,10 +5,12 @@
       xmlns:h="http://java.sun.com/jsf/html"> 
 
 <h:head></h:head> 
+
+<h:outputStylesheet name="twbootstrap/css/bootstrap.css"   /> 
 <h:body> 
 	<h:form>
 		<h:outputText value="testado acoes no console" />
-		<h:commandButton action="#{adminBean.save}" value="Testar" />
+		<h:commandButton action="#{adminBean.save}" value="Testar"  styleClass="btn btn-primary"/>
 	</h:form>
 </h:body> 
 </html>
